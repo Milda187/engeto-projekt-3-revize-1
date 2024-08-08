@@ -1,0 +1,635 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --primary-color: black;
+  --background-color: #fff;
+  --background-color-first: #729c67;
+  --background-color-second: #26441d;
+  --text-color: black;
+  --text-color-second: white;
+  --text-color-third: white;
+  --text-color-fourth: black;
+  --text-color-fifth: red;
+  --a-normal-color: #efa69d;
+  --a-hover-color: #e9877b;
+  --switcher-color: rgb(76, 76, 76);
+}
+
+
+
+[data-theme='dark'] {
+  --primary-color: rgb(247, 247, 247);
+  --secondary-color: #d8d8d8;
+  --background-color: rgb(44, 43, 43);
+  --background-color-first: rgb(44, 43, 43);
+  --background-color-second: rgb(44, 43, 43);
+  --text-color: rgb(235, 235, 235);
+  --text-color-second: black;
+  --text-color-third: white;
+  --text-color-fourth: black;
+  --text-color-fifth: red;
+  --a-normal-color: #efa69d;
+  --a-hover-color: #e9877b;
+  --switcher-color: rgb(156, 156, 156); 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+
+/********************** ELEMENTS SPACING ***********************/
+
+/* MOBILE VIEWPORT */
+
+.mobile-content {
+  padding: 50px 50px;
+}
+  
+/* DESKTOP VIEWPORT */
+  
+@media (min-width: 768px) {
+  .desktop-content {
+    position: relative;
+    width: 80%;
+    max-width: 1080px;
+    margin: auto;
+  }
+}
+  
+/************************* PARAGRAPHS **************************/
+
+p {
+  font-size: 16px;
+  text-align: justify;
+}
+
+
+/*********************************************************************************************
+************************************ HEADER + NAVIGATION *************************************
+*********************************************************************************************/
+
+header {
+  background-color: var(--background-color-first);
+}
+
+/* The switch - the box around the slider */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--switcher-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--switcher-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--switcher-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 25px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+  
+/* MOBILE VIEWPORT */
+
+.menu-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  color: var(--text-color-third);
+}
+
+nav {
+  position: relative;
+
+}
+.switcher-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 12px;
+  right: 10px;
+
+}
+
+.switcher-description i {
+  margin-right: 2px;
+  font-size: 15px;
+  color:var(--text-color-third);
+}
+
+.hamIcon a {
+  color: var(--text-color-third);
+  text-decoration: none;
+} 
+
+.hamIcon {
+  text-align: center;
+  display: none;
+} 
+
+.hamIcon li {
+  padding-bottom: 10px;
+} 
+
+@media (max-width: 768px) {
+  .desktop-navigation {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+} 
+
+/* DESKTOP VIEWPORT */
+
+@media (min-width: 768px) {
+  .switcher-box {
+    position: absolute;
+    bottom: 15px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .desktop-navigation {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .desktop-navigation li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    list-style: none;
+  }
+
+  .desktop-navigation a {
+    color: var(--text-color-third);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .desktop-navigation a:hover {
+    color: var(--a-hover-color);
+    border-bottom: 1px solid var(--text-color);
+  }
+}
+
+@media (min-width: 768px){
+  .desktop-navigation {
+      display: flex !important;       
+  }
+}
+
+/*********************************************************************************************
+************************************** HERO SECTION ******************************************
+*********************************************************************************************/
+
+/* MOBILE VIEWPORT */
+
+.hero-section {
+  position: relative;
+  height: 800px;
+  background: url("./images/football-ball.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-section h1 {
+  position: absolute;
+  bottom: 20px;
+  right: 0px;
+  padding: 50px;
+  text-align: right;
+  max-width: 300px;
+  font-size: 60px;
+  color: var(--text-color-third);
+}
+
+/* DESKTOP VIEWPORT */
+
+@media (min-width: 768px) {
+  .hero-section h1 {
+    max-width: 350px;
+    font-size: 96px;
+    top: 500px;
+  }
+}
+
+/*********************************************************************************************
+************************************* ABOUT FOOTBALL SECTION *********************************
+*********************************************************************************************/
+
+/* MOBILE VIEWPORT */
+
+.about-football {
+  color: var(--text-color);
+}
+.about-football h2 {
+  margin-bottom: 20px;
+}
+
+.h2-about-football {
+  text-align: center;
+}
+
+/* DESKTOP VIEWPORT */
+
+@media (min-width: 768px) {
+  .desktop-content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+/******************************************************************************************
+************************************* GAME SECTION ****************************************
+******************************************************************************************/
+
+.game-section {
+  background-color: var(--background-color-first);
+  color: var(--text-color-third);
+}
+
+/* MOBILE VIEWPORT */
+
+.h2-game {
+  margin-bottom: 20px;
+}
+  
+.h2-game {
+  text-align: center;
+}
+
+.game-section p {
+  margin-bottom: 20px;
+}
+
+/*********************************************************************************************
+************************************* PLAYGROUND SECTION *************************************
+*********************************************************************************************/
+
+/* MOBILE VIEWPORT */
+
+.playground {
+  color: var(--text-color);
+}
+
+.playground h2 {
+  margin-bottom: 20px;
+}
+
+.playground p {
+  margin-bottom: 20px;
+}
+
+.playground-right-1 {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.playground-right-1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: all 0.5s linear;
+}
+
+.dimensions {
+  text-align: center;
+}
+
+.scalable {
+  transition: all ease-in-out .5s;
+}
+
+.scalable:hover {
+  transform: scale(1.1);
+  }
+
+/*********************************************************************************************
+************************************* THE BEST PLAYER SECTION ********************************
+*********************************************************************************************/
+
+.the-best-player {
+  background-color: var(--background-color-first);
+  color: var(--text-color-fourth);
+}
+
+/* MOBILE VIEWPORT */
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.gallery-item-1, .gallery-item-2, .gallery-item-3, .gallery-item-3  {
+  width: 100%;
+}
+
+.gallery-item-1 img, .gallery-item-2 img, .gallery-item-3 img, .gallery-item-4 img   {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.gallery-title-h3 {
+  text-align: center;
+  background-color: var(--text-color-third);
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.h3-dark {
+  color: var(--text-color-fourth);
+}
+
+/* DESKTOP VIEWPORT */
+
+@media (min-width: 768px) {
+  .gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gallery-item-1, .gallery-item-2, .gallery-item-3, .gallery-item-4 {
+    width: 40%;
+    height: 300px;
+  }
+
+  .gallery-title-h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+
+  .gallery-item-h3 {
+    width: 85%;
+    height: 100px;
+  }
+}
+
+/*********************************************************************************************
+************************************* COMPETITIONS SECTION ***********************************
+*********************************************************************************************/
+
+/* MOBILE VIEWPORT */
+
+.competitions {
+  color: var(--text-color);
+}
+
+.competitions-content h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+  
+.International-competitions-h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.National-competitions-h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Czech-republic-competitions-h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.competitions-content p {
+  margin-bottom: 20px;
+}
+
+/*********************************************************************************************
+************************************* CZECHIA SECTION ****************************************
+*********************************************************************************************/
+
+.czechia-section {
+  background-color: var(--background-color-first);
+  color: var(--text-color-third);
+}
+
+/* MOBILE VIEWPORT */
+
+.czechia-h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-right {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.about-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-fit: fill;
+  border-radius: 5px;
+}
+
+/* DESKTOP VIEWPORT */
+
+@media (min-width: 768px) {
+  .czechia-content {
+    display: flex;
+    gap: 50px;
+  }
+
+  .czechia-h2 {
+    text-align: left;
+    text-align: center;
+  }
+  
+  .about-left {
+    width: 70%;
+  }
+
+  .about-left h2 {
+    justify-content: flex-start;
+  }
+  .about-right {
+    width: 30%;
+  }
+}
+
+/*********************************************************************************************
+****************************************** FORM SECTION **************************************
+*********************************************************************************************/
+
+/* MOBILE VIEWPORT */
+
+.form-section {
+  background-color: var(--background-color-second);
+  color: var(--text-color-third);
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.fullName, .email, .password-first, .password-second {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  outline: none;
+  color: white;
+  font-size: 15px;
+}
+
+form input[type="submit"] {
+  background-color: #db0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.information-fullName, .information-email {
+  text-align: center;
+  color: var(--text-color-fifth);
+  display: none;
+}
+
+.result-text {
+  text-align: center;
+}
+
+.true {
+  color: yellow;
+}
+
+.false {
+  color: red;
+}
+
+#form.invalid .input-box:before {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 8px;
+  width: 24px;
+  height: 24px;
+  background: url(./images/invalid.png);
+  background-size: cover;
+  z-index: 1000;
+}
+
+#form.valid .input-box:before {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 8px;
+  width: 24px;
+  height: 24px;
+  background: url(./images/valid.png);
+  background-size: cover;
+  z-index: 1000;
+}
+
+.input-box {
+  position: relative;
+}
+
+/*********************************************************************************************
+****************************************** SCROLL ********************************************
+*********************************************************************************************/
+
+/* MOBILE VIEWPORT */
+
+.top-page {
+  text-decoration: none;
+  background-color: rgb(6, 240, 228);
+  padding: 10px 10px;
+  border-radius: 50%;
+  color: black;
+  font-size: 20px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: none;
+}
+
